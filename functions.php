@@ -47,3 +47,15 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+ /**
+  * Print scripts or data before the closing body tag on the front end.
+  */
+function marker_footer_scripts() {
+ echo    '<script>
+            var nav = responsiveNav(".nav-collapse", {
+                label: "&#9776;" // String: Label for the navigation toggle
+            });
+        </script>';
+}  
+add_action( 'wp_footer', 'marker_footer_scripts', 200 );
