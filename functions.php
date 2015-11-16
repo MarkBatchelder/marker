@@ -53,8 +53,9 @@ require get_template_directory() . '/inc/jetpack.php';
   */
 function marker_footer_scripts() {
  echo    '<script>
-            var nav = responsiveNav(".nav-collapse", {
-                label: "&#9776;" // String: Label for the navigation toggle
+            var nav = responsiveNav(".main-navigation", { // Selector
+                label: "&#9776;", // String: Label for the navigation toggle
+                navClass: "main-navigation", // String: Default CSS class. If changed, you need to edit the CSS too!
             });
         </script>';
 }  
